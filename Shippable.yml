@@ -13,7 +13,10 @@ build:
     pull: false
     env: FOO=bar
     options: "-e HOME=/root"
-  
+
+  ci:
+    - pwd
+    - ls    
 #script:
   #- /var/www/html/vendor/bin/phpunit --log-junit shippable/testresults/junit.xml -c dev/tests/functional/phpunit.xml.dist
 
