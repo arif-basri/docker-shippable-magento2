@@ -13,7 +13,7 @@ build:
     options: "-e HOME=/root"
 
   ci:
-    - php -f /var/www/html/vendor/bin/phpunit -- --log-junit shippable/testresults/junit.xml -c dev/tests/functional/phpunit.xml.dist
+    - php -f /var/www/html/vendor/bin/phpunit -- --log-junit shippable/testresults/junit.xml -c /var/www/html/dev/tests/functional/phpunit.xml.dist
 
 notifications:
   email: false
