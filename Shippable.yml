@@ -13,7 +13,6 @@ build:
     options: "-e HOME=/root"
 
   ci:
-    - composer install
     - php -f /var/www/html/vendor/bin/phpunit -- --log-junit shippable/testresults/junit.xml -c /var/www/html/dev/tests/unit/phpunit.xml.dist
 
 notifications:
