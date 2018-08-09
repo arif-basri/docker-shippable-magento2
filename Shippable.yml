@@ -15,6 +15,10 @@ build:
     options: "-e HOME=/root"
   
 script:
+  - pwd
+  - ls -l
+  - cd /
+  - ls -l
   - var/www/html/vendor/bin/phpunit --log-junit shippable/testresults/junit.xml -c dev/tests/functional/phpunit.xml.dist
 
 notifications:
