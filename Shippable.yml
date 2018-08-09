@@ -1,0 +1,24 @@
+language: php
+
+php:
+  - 7.1
+
+build:
+  pre_ci:
+    - docker build -t firadaboss/magento2:latest .
+
+  pre_ci_boot:
+    image_name: firadaboss/magento2    ##replace with your repo and image name
+    image_tag: latest
+    pull: true
+    env: FOO=bar
+    options: "-e HOME=/root"
+
+before_script:
+  - mkdir -p shippable/testresults
+  
+script:
+ - vendor/bin/phpunit --log-junit shippable/testresults/junit.xml -c dev/tests/functional/phpunit.xml.dist
+
+notifications:
+  email: false
