@@ -13,12 +13,9 @@ build:
     pull: false
     env: FOO=bar
     options: "-e HOME=/root"
-
-before_script:
-  - mkdir -p shippable/testresults
   
 script:
-  - /var/www/html/vendor/bin/phpunit --log-junit shippable/testresults/junit.xml -c dev/tests/functional/phpunit.xml.dist
+  - var/www/html/vendor/bin/phpunit --log-junit shippable/testresults/junit.xml -c dev/tests/functional/phpunit.xml.dist
 
 notifications:
   email: false
