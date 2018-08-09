@@ -1,7 +1,5 @@
-language: php
-
-php:
-  - 7.1
+language: none
+#using a custom Docker image
 
 build:
   pre_ci:
